@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+@import url('https://fonts.googleapis.com/css?family=Raleway:200,400,600,700,900&display=swap');
+
+/*****---------------------------------------- 1) font-family: 'Rajdhani', sans-serif;
+ 2) font-family: 'Poppins', sans-serif;
+ ----------------------------------------*****/
+
+
+/*--------------------------------------------------------------------- import Files ---------------------------------------------------------------------*/
+
+@import url(animate.min.css);
+@import url(normalize.css);
+@import url(meanmenu.css);
+@import url(owl.carousel.min.css);
+@import url(slick.css);
+@import url(jquery-ui.css);
+@import url(nice-select.css);
+
+/*--------------------------------------------------------------------- skeleton ---------------------------------------------------------------------*/
+
+
+.container{
+  padding-top: 20px;
+}
+
+.logo img{
+     max-width: 100%;
+     height: auto;
+}
+
+.foto-perfil{
+  width: 100%;
+  height: auto;
+}
+
+.loader_bg {
+     position: fixed;
+     z-index: 9999999;
+     background: #fff;
+     width: 100%;
+     height: 100%;
+}
+
+.loader {
+     height: 100%;
+     width: 100%;
+     position: absolute;
+     left: 0;
+     top: 0;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}
+
+.loader img {
+     width: 280px;
+}
+
+.navigation.navbar {
+     float: right;
+     padding-top: 12px;
+}
+
+.navigation.navbar-dark .navbar-nav .nav-link {
+     padding: 0 25px;
+     color: #000000;
+     font-size: 40px;
+     line-height: 20px;
+}
+
+.navigation.navbar-dark .navbar-nav .nav-link:focus,
+.navigation.navbar-dark .navbar-nav .nav-link:hover {
+     color: #984b17;
+}
+
+.navigation.navbar-dark .navbar-nav .active>.nav-link,
+.navigation.navbar-dark .navbar-nav .nav-link.active,
+.navigation.navbar-dark .navbar-nav .nav-link.show,
+.navigation.navbar-dark .navbar-nav .show>.nav-link {
+     color: #4480bd;
+}
+
+.header {
+     width: 100%;
+     background: #ffffff;
+     padding: 20px 30px;
+}
+
+/*body div.container{
+    background: red/*linear-gradient(90deg, rgba(0,0,0,.25) 0%, rgba(255,255,255,.25) 52%, rgba(0,0,0,.25) 97%); 
+  }*/
+
+body h1{
+    text-align: center;
+    color: #000000;
+}
+
+
+  .loader_bg {
+    position: fixed;
+    z-index: 9999999;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+}
+
+.loader {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader img {
+    width: 280px;
+}
+
+.roles{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+}
+
+.usuarios{
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+  background-color: #fff;
+  color: #000;
+  font-size: 20px;
+}
+
+.boton-sesion{
+  margin:auto;
+  text-align: center;
+  margin-bottom: 10px;
+}

@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site metas -->
+    <title>All service</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+
+    <!-- Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Otros enlaces JS -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+
+    <title>Agregar</title>
+    <script type="module" src="./js/custom/mi-nav.js"></script>
+    <!--<script type="module" src="./js/custom/checkValida.js"></script>-->
+    <script type="module" src="./lib/js/custom/hipervinculo-cancelar-index.js"></script>
+    <script type="module" src="./lib/js/custom/boton-agregar.js"></script>
+    <script type="module" src="./lib/js/custom/indica-campos-obligatorios.js"></script>
+    <script type="module" src="./js/custom/campo-nombre.js"></script>
+    <script type="module" src="./js/custom/campo-oficios.js"></script>
+    <!-- Agrega otros scripts aquí -->
+
+</head>
+
+<body>
+
+  <div class="loader_bg">
+     <div class="loader"><img src="images/carga-camion.gif" alt="cargando..." width="100px" height="100px"/></div>
+  </div>
+    <mi-nav id="nav" class="encabezado"></mi-nav>
+
+    <section class="banner_main">
+        <div class="container register">
+            <div class="row">
+                <div class="col-md-3 register-left">
+                    <img style="max-width: 200px;" src="images/loguito.png" alt="" />
+                    <h3>Bienvenido</h3>
+                    <p>Estas a un paso más de estar con nosotros!</p>
+                    <br>
+                    <br>
+                    ¿Ya tienes una cuenta?
+                    <a href="login.html" type="submit">Iniciar sesión</a><br />
+                </div>
+              
+                <div class="col-md-9 register-right">
+                    <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                aria-controls="home" aria-selected="true">Cliente</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                                aria-controls="profile" aria-selected="false">Empleado</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h3 class="register-heading">Registrarse como un cliente</h3>
+
+                          <style>
+                              .error {
+                                  color: red;
+                              }
+                          </style>
+                          
+                          <form id="forma" action="post" onsubmit="return validarFormulario(event)">
+
+                              <div class="row register-form">
+                                  <div class="col-md-6">
+
+                                      <div class="form-group">
+                                          <label for="nombre">Nombre *</label>
+                                          <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Nombre *" pattern="[A-Za-zÁ-ú ]+" title="Solo se permiten letras y espacios" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="apellidoP">Apellido Paterno *</label>
+                                          <input type="text" id="apellidoP" name="apellidoP" class="form-control" placeholder="Apellido Paterno *" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="apellidoM">Apellido Materno *</label>
+                                          <input type="text" id="apellidoM" name="apellidoM" class="form-control" placeholder="Apellido Materno *" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="fecha_nac">Fecha de nacimiento *</label>
+                                          <input type="date" id="fecha_nac" name="fecha_nac" class="form-control" placeholder="Fecha de nacimiento *" required />
+                                      </div>
+
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="correo">Cue *</label>
+                                          <input type="email" id="correo" name="cue" class="form-control" placeholder="Cue *" required />
+                                          <span id="correoError" class="error"></span>
+                                      </div>
+
+                                    <div class="form-group">
+                                        <label for="contrasena1">Match *</label>
+                                        <input type="password" id="contrasena1" name="match" class="form-control" placeholder="Match *" minlength="8" required />
+                                        <span id="matchError" class="error"></span>
+                                    </div>
+
+                                      <fieldset class="border p-2" hidden>
+                                          <legend class="w-auto">Roles</legend>
+                                          <div id="roles_empleados" class="mt-3">
+                                              <p>
+                                                  <label style='display: flex'>
+                                                      <input type='checkbox' class='rolCheckbox' name='rolIds[]' id='rolCheckbox_Cliente' value='Cliente' checked>
+                                                      <span>
+                                                          <strong>Cliente</strong><br>No lo hay
+                                                      </span>
+                                                  </label>
+                                              </p>
+                                          </div>
+                                      </fieldset>
+                                      <button type="submit" class="btnRegister">Registrarse</button>
+                                  </div>
+                              </div>
+
+                          </form>
+
+                          <script>
+                            function validarFormulario(event) {
+                                var correo = document.getElementById("correo").value;
+                                var match = document.getElementById("contrasena1").value;
+
+                                // Validación del correo electrónico
+                                if (!validarCorreo(correo)) {
+                                    document.getElementById("correoError").innerText = "El formato del correo electrónico no es válido.";
+                                    event.preventDefault(); // Evita el envío del formulario
+                                    return false;
+                                } else {
+                                    document.getElementById("correoError").innerText = "";
+                                }
+
+                                // Validación del campo "Match"
+                                if (!validarMatch(match)) {
+                                    document.getElementById("matchError").innerText = "La contraseña debe tener al menos 8 caracteres y al menos una mayúscula.";
+                                    event.preventDefault(); // Evita el envío del formulario
+                                    return false;
+                                } else {
+                                    document.getElementById("matchError").innerText = "";
+                                }
+
+                                // Resto de la lógica de validación aquí
+
+                                // Si todo está bien, puedes permitir el envío del formulario
+                                return true;
+                            }
+
+                              function validarCorreo(correo) {
+                                  // Validar que el correo tenga una arroba y .com
+                                  var arrobaPos = correo.indexOf("@");
+                                  var puntoComPos = correo.indexOf(".com");
+
+                                  return arrobaPos > 0 && puntoComPos > arrobaPos;
+                              }
+
+                              function validarMatch(match) {
+                                  // Validar que la contraseña tenga al menos 8 caracteres y al menos una mayúscula
+                                  return match.length >= 8 && /[A-Z]/.test(match);
+                              }
+                          </script>
+
+                        </div>
+                        <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                            <h3 class="register-heading">Registrarse como un empleado</h3>
+
+                          
+                          <form id="forma2" action="post" onsubmit="return validarFormulario2()">
+
+                              <div class="row register-form">
+                                  <div class="col-md-6">
+
+                                      <div class="form-group">
+                                          <label for="nombre">Nombre *</label>
+                                          <input type="text" id="nombre2" name="nombre" class="form-control" placeholder="Nombre *" pattern="[A-Za-zÁ-ú ]+" title="Solo se permiten letras y espacios" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="apellidoP">Apellido Paterno *</label>
+                                          <input type="text" id="apellidoP2" name="apellidoP" class="form-control" placeholder="Apellido Paterno *" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="apellidoM">Apellido Materno *</label>
+                                          <input type="text" id="apellidoM2" name="apellidoM" class="form-control" placeholder="Apellido Materno *" required />
+                                      </div>
+
+                                      <div class="form-group">
+                                          <label for="fecha_nac">Fecha de nacimiento *</label>
+                                          <input type="date" id="fecha_nac2" name="fecha_nac" class="form-control" placeholder="Fecha de nacimiento *" required />
+                                      </div>
+
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="form-group">
+                                          <label for="correo">Cue *</label>
+                                          <input type="email" id="correo2" name="cue" class="form-control" placeholder="Cue *" required />
+                                          <span id="correoError2" class="error"></span>
+                                      </div>
+
+                                    <div class="form-group">
+                                        <label for="contrasena2">Match *</label>
+                                        <input type="password" id="contrasena2" name="match" class="form-control" placeholder="Match *" minlength="8" required />
+                                        <span id="matchError2" class="error"></span>
+                                    </div>
+
+                                      <fieldset class="border p-2" hidden>
+                                          <legend class="w-auto">Roles</legend>
+                                          <div id="roles_empleados" class="mt-3">
+                                              <p>
+                                                  <label style='display: flex'>
+                                                      <input type='checkbox' class='rolCheckbox' name='rolIds[]' id='rolCheckbox_Empleado' value='Empleado' checked>
+                                                      <span>
+                                                          <strong>Empleado</strong><br>No lo hay
+                                                      </span>
+                                                  </label>
+                                              </p>
+                                          </div>
+                                      </fieldset>
+
+                                    <div class="form-group">
+                                        <campo-oficios></campo-oficios>
+                                    </div>
+                                    
+                                      <!-- Asegúrate de ajustar el nombre de la función para el segundo formulario -->
+                                      <button type="submit" class="btnRegister">Registrarse</button>
+                                  </div>
+                              </div>
+
+                          </form>
+
+                          <script>
+                              function validarFormulario2() {
+                                  var correo = document.getElementById("correo2").value;
+                                  var match = document.getElementById("contrasena2").value;
+
+                                  // Validación del correo electrónico
+                                  if (!validarCorreo(correo)) {
+                                      document.getElementById("correoError2").innerText = "El formato del correo electrónico no es válido.";
+                                      return false;
+                                  } else {
+                                      document.getElementById("correoError2").innerText = "";
+                                  }
+
+                                  // Validación del campo "Match"
+                                  if (!validarMatch(match)) {
+                                      document.getElementById("matchError2").innerText = "La contraseña debe tener al menos 8 caracteres y al menos una mayúscula.";
+                                      return false;
+                                  } else {
+                                      document.getElementById("matchError2").innerText = "";
+                                  }
+
+                                  // Resto de la lógica de validación aquí
+
+                                  // Si todo está bien, puedes enviar el formulario
+                                  //document.getElementById("forma").submit();
+                                return true;
+                                
+                              }
+
+                              function validarCorreo2(correo) {
+                                  // Validar que el correo tenga una arroba y .com
+                                  var arrobaPos = correo.indexOf("@");
+                                  var puntoComPos = correo.indexOf(".com");
+
+                                  return arrobaPos > 0 && puntoComPos > arrobaPos;
+                              }
+
+                              function validarMatch(match) {
+                                  // Validar que la contraseña tenga al menos 8 caracteres y al menos una mayúscula
+                                  return match.length >= 8 && /[A-Z]/.test(match);
+                              }
+                          </script>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="module">
+        import { escuchaEventosAgrega } from "./lib/js/escuchaEventosAgrega.js"
+        import { submit } from "./lib/js/submit.js"
+        import { muestraError } from "./lib/js/muestraError.js"
+        import { saltaAIndex } from "./lib/js/saltaAIndex.js"
+        import { ejecuta } from "./lib/js/ejecuta.js"
+        import { muestraRender } from "./lib/js/muestraRender.js"
+        import { Sesion } from "./js/Sesion.js"
+        
+
+        preparaVista()
+
+        async function preparaVista() {
+            try {
+                const render = await descargaRolOpciones()
+                const renderOficio = await descargaOficioOpciones()
+                muestraRender(oficios, renderOficio)
+
+                escuchaEventosAgrega(forma, agrega)
+                escuchaEventosAgrega(forma2, agrega2)
+            } catch (e) {
+                muestraError(e)
+            }
+        }
+
+        async function descargaRolOpciones() {
+            return await ejecuta(fetch("srv/SrvRolOpciones.php"))
+        }
+
+        async function descargaOficioOpciones() {
+            return await ejecuta(fetch("srv/SrvOficioOpcionesRegistro.php"))
+        }
+
+        async function agrega(evt) {
+            try {
+                const m = await submit(evt, "srv/SrvUsuarioAgregaCliente.php", forma)
+                saltaAIndex()
+            } catch (e) {
+                muestraError(e)
+            }
+        }
+
+        async function agrega2(evt) {
+            try {
+                const m = await submit(evt, "srv/SrvUsuarioAgregaEmpleado.php", forma2)
+                saltaAIndex()
+            } catch (e) {
+                muestraError(e.message)
+            }
+        }
+
+        preparaVistaSesion()
+
+        async function preparaVistaSesion() {
+            try {
+                const json = await buscaEnElServidor()
+                const sesion = new Sesion(json)
+                muestra(sesion)
+            } catch (e) {
+                muestraError(e)
+            }
+        }
+
+        async function buscaEnElServidor() {
+            return await ejecuta(fetch("srv/SrvSesion.php"))
+        }
+
+        function muestra(sesion) {
+            nav.sesion = sesion
+        }
+    </script>
+  
+  
+  
+    <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #3b5998;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+  
+        <!-- Twitter -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #55acee;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+  
+        <!-- Google -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #dd4b39;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+  
+        <!-- Instagram -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #ac2bac;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+  
+        <!-- Linkedin -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #0082ca;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <!-- Github -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #333333;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+  
+  
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2023 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">EasySoft</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+  
+    
+  </body>
+    
+  
+  </html>
+  
+  

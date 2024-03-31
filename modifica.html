@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- mobile metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <!-- site metas -->
+    <title>All service</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- style css -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- style css -->
+  <!-- estilo css -->
+   <link rel="stylesheet" href="css/perfil.css">
+  <!-- estilo css -->
+   <link rel="stylesheet" href="css/estilo.css">
+    <!-- Responsive-->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- fevicon -->
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+    <!-- Tweaks for older IEs-->
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+ <title>Modificar</title>
+ <script type="module"
+   src="./lib/js/custom/campo-id-oculto.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/hipervinculo-cancelar-index.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/boton-guardar.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/boton-eliminar.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/indica-campos-obligatorios.js">
+   </script>
+  <script type="module"
+  src="./js/custom/campo-nombre-cargando.js">
+  </script>
+  <script type="module"
+  src="./js/custom/campo-apellido-paterno-cargando.js">
+  </script>
+  <script type="module"
+  src="./js/custom/campo-apellido-materno-cargando.js">
+  </script>
+ <script type="module"
+   src="./js/custom/campo-cue-cargando.js">
+   </script>
+ <script type="module"
+   src="./js/custom/campo-roles.js">
+   </script>
+  <script type="module"
+    src="./js/custom/campo-match-cargando.js">
+    </script>
+  <script type="module"
+  src="./js/custom/mi-nav.js">
+  </script>
+</head>
+
+<body>
+
+  <div class="loader_bg">
+     <div class="loader"><img src="images/carga-camion.gif" alt="cargando..." width="100px" height="100px"/></div>
+  </div>
+  <mi-nav id="nav" class="encabezado"></mi-nav>
+  
+ <form id="forma">
+  <h1 style="text-align: center; padding-top: 10px; padding-bottom: 10px;">Modificar</h1>
+  <campo-id-oculto>
+  </campo-id-oculto>
+  
+
+   <div class='container perfil'>
+       <div class='main-body'>
+           <div class='row'>
+
+               <!--<campo-nombre-cargando></campo-nombre-cargando>
+               <campo-apellido-paterno-cargando></campo-apellido-paterno-cargando>
+               <campo-apellido-materno-cargando></campo-apellido-materno-cargando>
+               <campo-cue-cargando></campo-cue-cargando>
+               <campo-match-cargando></campo-match-cargando>
+               <campo-roles></campo-roles>
+               <!--<indica-campos-obligatorios>
+                    </indica-campos-obligatorios>-->
+
+               <div class='col-md-6 col-lg-5'>
+                   <div class='card mb-3'>
+                       <div class='card-body'>
+                           <div class='row'>
+                               <div class='col-12'>
+                                   <campo-nombre-cargando></campo-nombre-cargando>
+                               </div>
+                           </div>
+                           <hr>
+                           <div class='row'>
+                               <div class='col-12'>
+                                   <campo-apellido-paterno-cargando></campo-apellido-paterno-cargando>
+                               </div>
+                           </div>
+                           <hr>
+                           <div class='row'>
+                               <div class='col-12'>
+                                   <campo-apellido-materno-cargando></campo-apellido-materno-cargando>
+                               </div>
+                           </div>
+                           <hr>
+                           <div class='row'>
+                               <div class='col-12'>
+                                   <campo-cue-cargando></campo-cue-cargando>
+                               </div>
+                           </div>
+                           <hr>
+                           <div class='row'>
+                               <div class='col-12'>
+                                   <campo-match-cargando></campo-match-cargando>
+                               </div>
+                           </div>
+                           <hr>
+                          <!--<campo-roles></campo-roles>-->
+
+                           <!--<indica-campos-obligatorios>
+                                  </indica-campos-obligatorios>-->
+                           <boton-guardar></boton-guardar>
+                           <boton-eliminar></boton-eliminar>
+                           <hipervinculo-cancelar-index></hipervinculo-cancelar-index>
+                       </div>
+                   </div>
+               </div>
+
+               <div class='col-md-6 col-lg-4'>
+                   <div class='card'>
+                       <div class='card-body'>
+                           <div class='d-flex flex-column align-items-center text-center'>
+                               <img class='foto-perfil img-fluid' src='images/carpinteria.jpg' alt='Admin' width='265'
+                                   height='265'>
+                           </div>
+                       </div>
+                   </div>
+
+                   <div class='card mt-3'>
+                       <ul class='list-group list-group-flush'>
+                           <li class='list-group-item'>
+                               <h6 class='mb-0'>Calle: <span class='text-secondary'>Gema</span></h6>
+                           </li>
+                           <li class='list-group-item'>
+                               <h6 class='mb-0'>Numero Exterior: <span class='text-secondary'>4</span></h6>
+                           </li>
+                           <li class='list-group-item'>
+                               <h6 class='mb-0'>Colonia: <span class='text-secondary'>Balbuena</span></h6>
+                           </li>
+                           <li class='list-group-item'>
+                               <h6 class='mb-0'>Municipio: <span class='text-secondary'>Chachalacas</span></h6>
+                           </li>
+                           <li class='list-group-item'>
+                               <h6 class='mb-0'>Estado: <span class='text-secondary'>Veracruz</span></h6>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+
+           </div>
+       </div>
+   </div>
+
+   
+ </form>
+
+  
+
+ <script type="module">
+  import {
+   ejecuta
+  } from "./lib/js/ejecuta.js"
+  import {
+   submit
+  } from "./lib/js/submit.js"
+  import {
+   muestraError
+  } from "./lib/js/muestraError.js"
+  import {
+   parametrosDePagina
+  } from "./lib/js/parametrosDePagina.js"
+  import {
+   saltaAIndex
+  } from "./lib/js/saltaAIndex.js"
+  import {
+   muestraNumero
+  } from "./lib/js/muestraNumero.js"
+  import {
+   muestraTexto
+  } from "./lib/js/muestraTexto.js"
+  import {
+   escuchaEventosModifica
+  } from "./lib/js/escuchaEventosModifica.js"
+  import {
+   confirmaEliminar
+  } from "./lib/js/confirmaEliminar.js"
+  import {
+   muestraRender
+  } from "./lib/js/muestraRender.js"
+  import {
+   Sesion
+  } from "./js/Sesion.js"
+
+  const parametros =
+   parametrosDePagina()
+
+   //Funcion para ver la sesion
+   preparaVistaSesion()
+
+    async function preparaVistaSesion() {
+     try {
+      const json =
+       await buscaEnElServidorSesion()
+      const sesion = new Sesion(json)
+      muestraSesion(sesion)
+     } catch (e) {
+      muestraError(e)
+     }
+    }
+
+   async function
+     buscaEnElServidorSesion() {
+     return await ejecuta(fetch(
+      "srv/SrvSesion.php"))
+    }
+
+   function muestraSesion(sesion) {
+     nav.sesion = sesion
+    }
+
+   //**********************************
+
+   /******Muestra la vista del formulario para modificacion*******/
+
+   preparaVista()
+   
+  async function preparaVista() {
+   try {
+     console.log("Valor de id:", parametros.get("id"));
+    const json =
+     await buscaEnElServidor()
+    muestra(json.modelo)
+    escuchaEventosModifica(forma,
+     modifica, btnElimina, elimina)
+   } catch (e) {
+    muestraError(e)
+    saltaAIndex()
+   }
+  }
+
+  async function
+   buscaEnElServidor() 
+  {
+    console.log("Valor de id en buscaEnElServidor:", parametros.get("id"));
+   return await ejecuta(fetch(
+    "srv/SrvUsuarioBusca.php?"
+    + parametros))
+  }
+
+  function muestra(modelo) {
+    const m = modelo.match;
+    if(
+        !m === true
+      ){
+        m ="*******";
+      }
+   muestraNumero(forma.id,
+    modelo.id)
+   muestraTexto(forma.nombre,
+    modelo.nombre)
+   muestraTexto(forma.apellidoP,
+    modelo.apellidoP)
+   muestraTexto(forma.apellidoM,
+    modelo.apellidoM)
+   muestraTexto(forma.cue,
+    modelo.cue)
+   muestraTexto(forma.match, m)
+  }
+
+/*************Termina vista para el formulario para modificar************/
+
+  /** @param {Event} evt */
+  async function modifica(evt) {
+   try {
+    const m = await submit(evt,
+     "srv/SrvUsuarioModifica.php",
+     forma)
+    saltaAIndex()
+   } catch (e) {
+    muestraError(e)
+   }
+  }
+
+  async function elimina() {
+   try {
+    if (confirmaEliminar()) {
+     const json = await ejecuta(
+      fetch(
+       "srv/SrvUsuarioElimina.php?"
+       + parametros))
+     saltaAIndex()
+    }
+   } catch (e) {
+    muestraError(e)
+   }
+  }
+ </script>
+
+  <footer class="bg-dark text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4 pb-0">
+      <!-- Section: Social media -->
+      <section class="mb-4">
+        <!-- Facebook -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #3b5998;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+
+        <!-- Twitter -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #55acee;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+
+        <!-- Google -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #dd4b39;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+
+        <!-- Instagram -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #ac2bac;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+
+        <!-- Linkedin -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #0082ca;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-linkedin-in"></i
+        ></a>
+        <!-- Github -->
+        <a
+          class="btn text-white btn-floating m-1"
+          style="background-color: #333333;"
+          href="#!"
+          role="button"
+          ><i class="fab fa-github"></i
+        ></a>
+      </section>
+      <!-- Section: Social media -->
+    </div>
+
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">EasySoft</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery-3.0.0.min.js"></script>
+    <script src="js/plugin.js"></script>
+    <!-- sidebar -->
+    <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+</html>

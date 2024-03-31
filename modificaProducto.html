@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Modificar</title>
+ <script type="module"
+   src="./lib/js/custom/boton-guardar.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/boton-eliminar.js">
+   </script>
+ <script type="module"
+   src="./js/custom/campo-producto.js">
+   </script>
+ <script type="module"
+   src="./js/custom/campo-precio.js">
+   </script>
+ <script type="module"
+   src="./js/custom/campo-cantidad.js">
+   </script>
+</head>
+
+<body>
+ <form id="forma">
+  <h1>Modificar</h1>
+  <input type="hidden"
+    name="prodId">
+  <p>
+   <a href="carrito.html">
+    Cancelar</a>
+  </p>
+  <campo-producto></campo-producto>
+  <campo-precio></campo-precio>
+  <campo-cantidad></campo-cantidad>
+  <indica-campos-obligatorios>
+  </indica-campos-obligatorios>
+  <p>
+   <boton-guardar></boton-guardar>
+   <boton-eliminar>
+   </boton-eliminar>
+  </p>
+ </form>
+
+ <script type="module">
+  import {
+   ejecuta
+  } from "./lib/js/ejecuta.js"
+  import {
+   submit
+  } from "./lib/js/submit.js"
+  import {
+   muestraError
+  } from "./lib/js/muestraError.js"
+  import {
+   parametrosDePagina
+  } from "./lib/js/parametrosDePagina.js"
+  import {
+   muestraNumero
+  } from "./lib/js/muestraNumero.js"
+  import {
+   muestraTexto
+  } from "./lib/js/muestraTexto.js"
+  import {
+   muestraPrecio
+  } from "./lib/js/muestraPrecio.js"
+  import {
+   escuchaEventosModifica
+  } from "./lib/js/escuchaEventosModifica.js"
+  import {
+   confirmaEliminar
+  } from "./lib/js/confirmaEliminar.js"
+
+  const parametros =
+   parametrosDePagina()
+  preparaVista()
+
+  async function preparaVista() {
+   try {
+    const modelo =
+     await buscaEnElServidor()
+    muestra(modelo)
+    escuchaEventosModifica(forma,
+     modifica, btnElimina, elimina)
+   } catch (e) {
+    muestraError(e)
+    saltaACarrito()
+   }
+  }
+
+  function saltaACarrito() {
+   location.href = "carrito.html"
+  }
+
+  async function
+   buscaEnElServidor() {
+   return await ejecuta(
+    fetch("srv/"
+     + "SrvDetalleVentaBusca.php?"
+     + parametros))
+  }
+
+  function muestra(modelo) {
+   muestraNumero(forma.prodId,
+    modelo.producto.id)
+   muestraTexto(forma.producto,
+    modelo.producto.nombre)
+   muestraPrecio(forma.precio,
+    modelo.precio)
+   muestraNumero(forma.cantidad,
+    modelo.cantidad)
+  }
+
+  /** @param {Event} evt */
+  async function modifica(evt) {
+   try {
+    const m = await submit(evt,
+     "srv/" +
+     "SrvDetalleVentaModifica.php",
+     forma)
+    saltaACarrito()
+   } catch (e) {
+    muestraError(e)
+   }
+  }
+
+  async function elimina() {
+   try {
+    if (confirmaEliminar()) {
+     await ejecuta(fetch("srv/" +
+      "SrvDetalleVentaElimina.php?"
+      + parametros))
+     saltaACarrito()
+    }
+   } catch (e) {
+    muestraError(e)
+   }
+  }
+ </script>
+</body>
+
+</html>

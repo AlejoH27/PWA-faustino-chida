@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Agregar</title>
+ <script type="module"
+   src="./lib/js/custom/campo-id-oculto.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/hipervinculo-cancelar-index.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/boton-agregar-producto.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/indica-campos-obligatorios.js">
+   </script>
+ <script type="module"
+   src="./lib/js/custom/indicador-cargando.js">
+   </script>
+ <script type="module"
+   src="./js/custom/campo-producto.js">
+   </script>
+ <script type="module"
+   src="./js/custom/campo-precio.js">
+   </script>
+ <script type="module"
+   src="./js/custom/campo-cantidad.js">
+   </script>
+</head>
+
+<body>
+
+  <div class="loader_bg">
+     <div class="loader"><img src="images/carga-camion.gif" alt="cargando..." width="100px" height="100px"/></div>
+  </div>
+  
+ <form id="forma">
+  <h1>Agregar</h1>
+  <campo-id-oculto>
+  </campo-id-oculto>
+  <p>
+   <hipervinculo-cancelar-index>
+   </hipervinculo-cancelar-index>
+  </p>
+  <campo-producto></campo-producto>
+  <campo-precio></campo-precio>
+  <campo-cantidad></campo-cantidad>
+  <indica-campos-obligatorios>
+  </indica-campos-obligatorios>
+  <p>
+   <boton-agregar-producto></boton-agregar-producto>
+  </p>
+ </form>
+
+ <script type="module">
+  import {
+   escuchaEventosAgrega
+  } from "./lib/js/escuchaEventosAgrega.js"
+  import {
+   submit
+  } from "./lib/js/submit.js"
+  import {
+   muestraError
+  } from "./lib/js/muestraError.js"
+  import {
+   parametrosDePagina
+  } from "./lib/js/parametrosDePagina.js"
+  import {
+   saltaAIndex
+  } from "./lib/js/saltaAIndex.js"
+  import {
+   ejecuta
+  } from "./lib/js/ejecuta.js"
+  import {
+   muestraNumero
+  } from "./lib/js/muestraNumero.js"
+  import {
+   muestraTexto
+  } from "./lib/js/muestraTexto.js"
+  import {
+   muestraPrecio
+  } from "./lib/js/muestraPrecio.js"
+  import {
+   txtProductoAgregado
+  } from "./js/txt/txtProductoAgregado.js"
+
+  const parametros =
+   parametrosDePagina()
+
+  preparaVista()
+
+  async function preparaVista() {
+   try {
+    const modelo =
+     await buscaEnElServidor()
+    muestra(modelo)
+    escuchaEventosAgrega(forma,
+     agrega)
+   } catch (e) {
+    muestraError(e)
+    saltaAIndex()
+   }
+  }
+
+  async function
+   buscaEnElServidor() {
+   return await ejecuta(fetch(
+    "srv/SrvProductoBusca.php?" +
+    parametros))
+  }
+
+  function muestra(modelo) {
+   muestraNumero(forma.id,
+    modelo.id)
+   muestraTexto(forma.producto,
+    modelo.nombre)
+   muestraPrecio(forma.precio,
+    modelo.precio)
+  }
+
+
+  /** @param {Event} evt */
+  async function agrega(evt) {
+   try {
+    const m = await submit(evt,
+     "srv/" +
+     "SrvDetalleVentaAgrega.php",
+     forma)
+    alert(txtProductoAgregado())
+    saltaAIndex()
+   } catch (e) {
+    muestraError(e)
+   }
+  }
+ </script>
+</body>
+
+</html>

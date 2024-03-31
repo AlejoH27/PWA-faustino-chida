@@ -1,0 +1,19 @@
+.linRE {
+    background-color: #7BB4E3;
+     color: white;
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     padding: 11px 20px;
+    border-radius: 15px;
+      float: right;
+     text-align: center;
+     text-decoration: none;
+     display: inline-block;
+   }
+   
+   .linRe a:hover, a:active {
+     background-color: #006DB2;
+   }
+   div {
+    margin: 70px;
+    border: 1px ;
+  }

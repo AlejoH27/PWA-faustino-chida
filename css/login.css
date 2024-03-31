@@ -1,0 +1,92 @@
+body1 {
+  font-family: "Karla", sans-serif;
+  background-color: #d0d0ce;
+  min-height: 100vh;
+}
+
+.brand-wrapper1 {
+  margin-bottom: 19px;
+}
+
+.brand-wrapper1 .logo1 {
+  height: 37px;
+}
+
+.login-card1 {
+  border: 0;
+  border-radius: 15px; /* Reduje el radio del borde */
+  box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+  overflow: hidden;
+}
+
+.login-card1 .card-body1 {
+  padding: 85px 60px 60px;
+}
+
+@media (max-width: 767px) {
+  .login-card1 .card-body1 {
+    padding: 35px 24px;
+  }
+}
+
+.login-card1-description1 {
+  font-size: 25px;
+  color: #000;
+  font-weight: bold; /* Cambiado a negrita para mayor énfasis */
+  margin-bottom: 20px; /* Reduje el espacio inferior */
+}
+
+.login-card1 form1 {
+  max-width: 326px;
+  margin: 0 auto; /* Centrado el formulario */
+}
+
+.login-card1 .form-control1 {
+  border: 1px solid #d5dae2;
+  padding: 15px 25px;
+  margin-bottom: 20px;
+  min-height: 45px;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+.login-card1 .form-control1::placeholder {
+  color: #919aa3;
+}
+
+.login-card1 .login-btn1 {
+  padding: 13px 20px 12px;
+  background-color: #000;
+  border-radius: 4px;
+  font-size: 17px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #fff;
+  margin-bottom: 24px;
+  transition: background-color 0.3s ease; /* Añadida transición de color de fondo */
+}
+
+.login-card1 .login-btn1:hover {
+  background-color: #555; /* Cambiado el color al hacer hover */
+  border: 1px solid #555; /* Cambiado el color del borde al hacer hover */
+  color: #fff;
+}
+
+.login-card1 .forgot-password-link1 {
+  font-size: 14px;
+  color: #555; /* Cambiado el color del enlace */
+  margin-bottom: 12px;
+  display: block; /* Añadido para que el enlace ocupe el ancho completo */
+}
+
+.login-card-footer-text1 {
+  font-size: 16px;
+  color: #0d2366;
+  margin-bottom: 40px; /* Reduje el espacio inferior */
+}
+
+.login-card-footer-nav1 a {
+  font-size: 14px;
+  color: #555; /* Cambiado el color de los enlaces del pie de página */
+}

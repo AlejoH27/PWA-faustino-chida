@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+   content="width=device-width">
+ <title>Carrito</title>
+ <script type="module"
+   src="./lib/js/custom/indicador-cargando.js">
+   </script>
+</head>
+
+<body>
+ <h1>Carrito</h1>
+ <p>
+  <a href="index.html">
+   Productos</a>
+  <button id="procesa"
+    type='button'>
+   Procesar compra
+  </button>
+ </p>
+ <p>
+  <label>
+   Folio
+   <output id="folio">
+    <indicador-cargando>
+    </indicador-cargando>
+   </output>
+  </label>
+ </p>
+ <fieldset>
+  <legend>Detalle</legend>
+  <ul id="detalles">
+   <indicador-cargando>
+   </indicador-cargando>
+  </ul>
+ </fieldset>`
+
+ <script type="module">
+  import {
+   ejecuta
+  } from "./lib/js/ejecuta.js"
+  import {
+   muestraError
+  } from "./lib/js/muestraError.js"
+  import {
+   parametrosDePagina
+  } from "./lib/js/parametrosDePagina.js"
+  import {
+   muestraRender
+  } from "./lib/js/muestraRender.js"
+  import {
+   muestraNumero
+  } from "./lib/js/muestraNumero.js"
+  import {
+   saltaAIndex
+  } from "./lib/js/saltaAIndex.js"
+  import {
+   txtConfirmaProcesamiento
+  } from "./js/txt/txtConfirmaProcesamiento.js"
+
+  const parametros =
+   parametrosDePagina()
+  preparaVista()
+
+  async function preparaVista() {
+   try {
+    const json =
+     await buscaEnElServidor()
+    muestra(json.modelo)
+    muestraRender(detalles,
+     json.render)
+    escuchaEventos()
+   } catch (e) {
+    muestraError(e)
+    //saltaAIndex()
+   }
+  }
+
+  async function
+   buscaEnElServidor() {
+   return await ejecuta(
+    fetch("srv/" +
+     "SrvVentaActivaBusca.php"))
+  }
+
+  function muestra(modelo) {
+   muestraNumero(folio, modelo.id)
+  }
+
+  function escuchaEventos() {
+   procesa.addEventListener(
+    "click", procesaVenta)
+  }
+
+  async function procesaVenta() {
+   try {
+    if (confirm(
+     txtConfirmaProcesamiento())) {
+     await ejecuta(fetch("srv/" +
+      "SrvVentaActivaProcesa.php"))
+     location.href = "cliente-detalle-servicio.html"
+    }
+   } catch (e) {
+    muestraError(e)
+   }
+  }
+ </script>
+</body>
+
+</html>

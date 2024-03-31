@@ -1,0 +1,17 @@
+{
+    "name": "All service",
+    "short_name": "AllService",
+    "theme_color": "#ffe08a",
+    "background_color": "#ffe08a",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "./",
+    "start_url": "/index.html",
+    "icons": [
+        {
+            "src": "/png-clipart-dogs-dogs.png",
+            "type": "image/png",
+            "sizes": "512x512"    
+        }
+    ]
+}
